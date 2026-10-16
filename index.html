@@ -12,21 +12,49 @@
 <style>
 :root{color-scheme:light dark;--bg:#faf9f6;--text:#222b35;--muted:#66717b;--line:#dedfdd;--accent:#315e82;--hover:#183f5f;--pill:#eaf0f3}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.75 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--accent);text-decoration:none;text-underline-offset:3px}a:hover{color:var(--hover);text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}.container{width:min(100% - 48px,860px);margin:auto}.topbar{border-bottom:1px solid var(--line)}.topbar .container{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0}.brand{font-size:13px;font-weight:700;letter-spacing:.025em;color:var(--text)}nav{display:flex;gap:23px;flex-wrap:wrap}nav a{font-size:12px;font-weight:600;color:var(--muted)}header.hero{padding:76px 0 48px;border-bottom:1px solid var(--line)}.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 15px}h1,h2{font-family:Newsreader,Georgia,serif;font-weight:500;letter-spacing:-.035em}h1{font-size:clamp(48px,8vw,78px);line-height:1.04;margin:0 0 18px}h2{font-size:clamp(31px,5vw,39px);line-height:1.15;margin:0 0 25px}.role{font-size:16px;line-height:1.8;color:var(--muted);margin:0 0 22px}.contact{display:flex;gap:10px 24px;flex-wrap:wrap;font-size:13px}.contact a{font-weight:600}.office{color:var(--muted);font-size:12px;margin-top:17px}main section{padding:48px 0;border-bottom:1px solid var(--line)}.intro{max-width:750px;font-size:16px;line-height:1.95;margin:0}.pub-list{list-style:none;counter-reset:pub 21;padding:0;margin:0}.pub-list li{counter-increment:pub -1;display:grid;grid-template-columns:34px 1fr;gap:15px;padding:20px 0;border-bottom:1px solid var(--line)}.pub-list li:last-child{border:0}.pub-list li:before{content:counter(pub,decimal-leading-zero);color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;padding-top:3px}.pub-title{font-weight:600;line-height:1.55;margin:0 0 5px}.authors{font-size:13px;color:var(--muted);line-height:1.65}.venue{font-size:12px;color:var(--muted);margin-top:3px;font-style:italic}.paper-link{font-size:11px;font-style:normal;font-weight:700;white-space:nowrap;margin-left:5px}.timeline{list-style:none;padding:0;margin:0}.timeline li{display:grid;grid-template-columns:125px 1fr;gap:22px;padding:15px 0}.years{color:var(--accent);font-size:13px;font-weight:700}.timeline p{margin:0;color:var(--muted);font-size:13px}.timeline strong{font-size:14px;font-weight:600}.thesis{margin-top:7px!important}footer{padding:28px 0 55px;color:var(--muted);font-size:12px}@media(max-width:600px){.container{width:min(100% - 36px,860px)}.topbar .container{align-items:flex-start;flex-direction:column;gap:8px}nav{gap:16px}header.hero{padding:54px 0 38px}main section{padding:38px 0}.timeline li{grid-template-columns:1fr;gap:4px}.pub-list li{grid-template-columns:26px 1fr;gap:9px}.intro{font-size:15px}}@media(prefers-color-scheme:dark){:root{--bg:#151b20;--text:#e6e8e8;--muted:#a1acb6;--line:#343d44;--accent:#9bc7e7;--hover:#d2eaff;--pill:#243540}}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .profile-photo {
   width: 160px;
   height: 160px;
   object-fit: cover;
+  object-position: center;
   border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
 }</style>
 </head>
 <body>
 <div class="topbar"><div class="container"><a class="brand" href="#top">NRF / Research</a><nav aria-label="Main navigation"><a href="#interests">About</a><a href="#research">Publications</a><a href="#positions">Positions</a><a href="#education">Education</a></nav></div></div>
 <div class="container" id="top">
-<header class="hero"><p class="eyebrow">Mathematics · Scientific Machine Learning</p><h1>Nicola Rares Franco</h1>  <img
+<header class="hero"><p class="eyebrow">Mathematics · Scientific Machine Learning</p><h1>Nicola Rares Franco</h1><p class="role">Postdoctoral Researcher at <a href="https://mox.polimi.it/" target="_blank" rel="noopener noreferrer">MOX</a>, <a href="https://www.polimi.it/" target="_blank" rel="noopener noreferrer">Politecnico di Milano</a>, Italy</p><div class="contact"><a href="mailto:nicolarares.franco@polimi.it">Email ↗</a><a href="https://scholar.google.it/citations?user=FZEeaOIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4980-5606" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div><div class="office">Piazza Leonardo da Vinci 32, 20133 Milan, Italy</div> <img
     src="https://662.euromech.org/media/images/f2.width-500.png"
     alt="Nicola Rares Franco"
     class="profile-photo"
-  ><p class="role">Postdoctoral Researcher at <a href="https://mox.polimi.it/" target="_blank" rel="noopener noreferrer">MOX</a>, <a href="https://www.polimi.it/" target="_blank" rel="noopener noreferrer">Politecnico di Milano</a>, Italy</p><div class="contact"><a href="mailto:nicolarares.franco@polimi.it">Email ↗</a><a href="https://scholar.google.it/citations?user=FZEeaOIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://orcid.org/0000-0002-4980-5606" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div><div class="office">Piazza Leonardo da Vinci 32, 20133 Milan, Italy</div></header>
+  ></header>
 <main>
 <section id="interests"><h2>Research interests</h2><p class="intro">My research focuses on the development and mathematical analysis of machine learning methods for scientific computing, particularly reduced order modeling, operator learning, theory-guided machine learning, and adaptive reduced order methods. More recently, I have been investigating probabilistic and generative approaches.</p></section>
 <section id="research"><h2>Publications</h2><ol class="pub-list">
